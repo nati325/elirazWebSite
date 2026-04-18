@@ -594,6 +594,8 @@ body {
 .option-card {
     position: relative;
     cursor: pointer;
+    display: block;
+    height: 100%;
 }
 
 .option-card input[type="radio"] {
@@ -616,6 +618,7 @@ body {
     color: var(--text-sub);
     transition: var(--t);
     min-height: 48px;
+    height: 100%;
 }
 
 .option-card input:checked+span {
