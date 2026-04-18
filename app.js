@@ -93,9 +93,9 @@ contactForm.addEventListener('submit', async e => {
         const phone = formData.get('טלפון') || '';
         const q1 = formData.get('עבירה') || '';
         const q2 = formData.get('מועד_דיון') || '';
-        const q3 = formData.get('ייצוג') || '';
+        const q3 = formData.get('עבר_קודם') || '';
         const body = encodeURIComponent(
-            `שם: ${name}\nטלפון: ${phone}\n\nעבירה: ${q1}\nמועד דיון: ${q2}\nייצוג: ${q3}`
+            `שם: ${name}\nטלפון: ${phone}\n\nעבירה: ${q1}\nמועד דיון: ${q2}\nעבר קודם: ${q3}`
         );
         window.location.href =
             `mailto:ali.law.israel@gmail.com?subject=פנייה חדשה מהאתר&body=${body}`;
