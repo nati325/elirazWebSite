@@ -1,72 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const openHeroModal = document.getElementById('openHeroModal');
     const contactModal = document.getElementById('contactModal');
     const closeModal = document.getElementById('closeModal');
-    const heroForm = document.getElementById('heroForm');
-    const midForm = document.getElementById('midForm');
     const toast = document.getElementById('toast');
 
+    function showThanks() {
+        if (toast) {
+            toast.classList.add('show');
+            
+            // Wait 5 seconds for the message to be read
+            setTimeout(() => {
+                toast.classList.remove('show');
+                
+                // After the message animation finishes (0.6s), redirect back
+                setTimeout(() => {
+                    if (document.referrer && document.referrer !== window.location.href) {
+                        window.location.href = document.referrer;
+                    } else {
+                        window.history.back();
+                    }
+                }, 600);
+            }, 5000);
+        }
+    }
+
     function handleFormSubmit(formElement, e) {
-        e.preventDefault(); 
+        e.preventDefault();
+        
+        // Show success message immediately
+        showThanks();
         
         const action = formElement.getAttribute('action');
-        if (action) {
-            const formData = new FormData(formElement);
+        const formData = new FormData(formElement);
+
+        if (action && action.includes('formsubmit.co')) {
             fetch(action, {
                 method: 'POST',
                 body: formData,
                 headers: {
                     'Accept': 'application/json'
                 }
-            }).then(response => {
-                showThanks();
-            }).catch(error => {
-                console.error('Error:', error);
-                showThanks(); 
-            });
-        } else {
-            showThanks();
+            })
+            .then(response => console.log('Success'))
+            .catch(error => console.error('Error:', error));
         }
-        
+
         formElement.reset();
+        if (contactModal) contactModal.classList.remove('active');
     }
 
-    function showThanks() {
-        if (toast) {
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-    }
-    
-    if (openHeroModal && contactModal) {
-        openHeroModal.addEventListener('click', () => {
-            contactModal.classList.add('active');
-        });
-    }
+    // Attach to all forms
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', (e) => handleFormSubmit(form, e));
+    });
 
+    // Modal logic
     if (closeModal && contactModal) {
-        closeModal.addEventListener('click', () => {
-            contactModal.classList.remove('active');
-        });
+        closeModal.addEventListener('click', () => contactModal.classList.remove('active'));
     }
 
-    // Close on overlay click
     if (contactModal) {
         contactModal.addEventListener('click', (e) => {
-            if (e.target === contactModal) {
-                contactModal.classList.remove('active');
-            }
+            if (e.target === contactModal) contactModal.classList.remove('active');
         });
     }
 
-    if (heroForm) {
-        heroForm.addEventListener('submit', (e) => {
-            handleFormSubmit(heroForm, e);
-            contactModal.classList.remove('active');
-        });
-    }
-    
-    if (midForm) {
-        midForm.addEventListener('submit', (e) => handleFormSubmit(midForm, e));
-    }
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('#openHeroModal') || e.target.closest('.btn-open-modal');
+        if (btn && contactModal) contactModal.classList.add('active');
+    });
 });
