@@ -64,14 +64,8 @@ body {
     direction: rtl;
     line-height: 1.6;
     overflow-x: hidden;
-}
-    font-family: 'Heebo', sans-serif;
-    color: var(--text-dark);
-    direction: rtl;
-    text-align: right;
-    line-height: 1.6;
-    background-color: var(--white);
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 ::selection {
