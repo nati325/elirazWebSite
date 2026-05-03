@@ -73,10 +73,12 @@ body {
     background-color: var(--white);
     color: var(--text-dark);
     direction: rtl;
-    line-height: 1.6;
+    line-height: 1.7; /* Improved line height */
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -179,49 +181,84 @@ ul {
 .hero-container {
     position: relative;
     z-index: 2;
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 15px;
+    gap: 20px;
+}
+
+.hero-logo-top {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hero-logo-top::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.4);
+    filter: blur(20px);
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .hero-logo-top img {
-    height: 110px;
-    width: auto;
-    margin-bottom: 5px;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    object-position: center;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+    border-radius: 50%; /* Circular logo */
+    overflow: hidden;
+    transform: scale(1.35);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 700px;
-    /* Slightly wider for centered look */
+    width: 100%;
+    max-width: 800px;
 }
 
 .hero-text {
-    margin-bottom: 15px;
-    /* Reduced */
+    margin-bottom: 25px;
 }
 
 .hero-text h1 {
+    font-family: 'Heebo', sans-serif;
     color: var(--white);
-    font-size: 2.2rem;
-    /* Reduced */
-    font-weight: 800;
-    margin-bottom: 5px;
-    /* Reduced */
-    line-height: 1.1;
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 .hero-text p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
-    /* Reduced */
-    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+.hero-text .quote-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 650px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 20px;
+    font-style: normal;
 }
 
 .hero-form-wrapper {
@@ -245,6 +282,7 @@ ul {
     font-family: inherit;
     transition: var(--t);
     border-radius: var(--radius);
+    text-align: right; /* Ensure right alignment */
 }
 
 .hero-form-wrapper input:focus,
@@ -252,8 +290,6 @@ ul {
     outline: none;
     border-color: var(--gold);
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-    transform: translateY(-2px);
 }
 
 .hero-form-wrapper input::placeholder {
@@ -313,25 +349,24 @@ ul {
 
 .btn-submit-gold {
     width: 100%;
-    background: var(--gold);
-    color: var(--primary);
-    border: none;
-    padding: 12px;
-    /* Reduced from 16px */
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 14px;
     font-size: 1.1rem;
-    /* Reduced */
-    font-weight: 800;
-    border-radius: var(--radius);
+    font-weight: 700;
+    border-radius: 4px; /* More solid/sharp corners */
     cursor: pointer;
-    margin-top: 10px;
-    transition: var(--t);
-    border: 1px solid var(--gold);
+    margin-top: 15px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-submit-gold:hover {
-    background: var(--primary);
-    color: var(--gold);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: var(--gold);
+    color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .hero-image {
@@ -396,14 +431,15 @@ ul {
 .info-strip {
     background-color: var(--primary);
     color: var(--white);
-    padding: 60px 0;
+    padding: 40px 0; /* Reduced */
 }
 
 .strip-title {
+    font-family: 'Heebo', sans-serif;
     font-size: 1.8rem;
     color: var(--white);
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .strip-text {
@@ -438,7 +474,7 @@ ul {
    TESTIMONIALS / TEAM
    ============================================= */
 .steps-section {
-    padding: 100px 0;
+    padding: 50px 0; /* Reduced from 100px */
     background-color: var(--white);
 }
 
@@ -463,11 +499,12 @@ ul {
 }
 
 .quote-text {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-muted);
     margin-bottom: 0;
-    font-style: italic;
+    font-style: normal; /* Removed italic */
+    font-weight: 400;
 }
 
 .quote-icon {
@@ -501,7 +538,7 @@ ul {
 .mid-cta-section {
     background-color: var(--primary);
     /* Back to dark blue */
-    padding: 80px 20px;
+    padding: 50px 20px; /* Reduced from 80px */
     display: flex;
     justify-content: center;
     border-top: 1px solid rgba(212, 175, 55, 0.3);
@@ -521,6 +558,7 @@ ul {
 }
 
 .mid-cta-box h2 {
+    font-family: 'Heebo', sans-serif;
     color: var(--white);
     font-size: 1.8rem;
     margin-bottom: 10px;
@@ -578,21 +616,21 @@ ul {
 }
 
 .btn-submit-white {
-    background-color: var(--gold);
-    color: var(--primary);
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: 800;
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: var(--t);
+    transition: all 0.4s ease;
     font-family: inherit;
-    border-radius: 5px;
+    border-radius: 4px;
     margin-top: 10px;
 }
 
 .btn-submit-white:hover {
-    background-color: var(--white);
+    background: var(--gold);
     color: var(--primary);
 }
 
@@ -600,7 +638,7 @@ ul {
    HOW IT WORKS
    ============================================= */
 .how-it-works {
-    padding: 80px 0;
+    padding: 50px 0; /* Reduced from 80px */
     background-color: var(--white);
 }
 
@@ -641,9 +679,11 @@ ul {
 }
 
 .step-card h3 {
+    font-family: 'Heebo', sans-serif;
     color: var(--primary);
     font-size: 1.2rem;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .step-card p {
@@ -865,63 +905,72 @@ ul {
     }
 
     .hero {
-        padding: 15px 10px 20px;
-        /* Balanced mobile padding */
+        padding: 20px 15px; /* Compact padding */
     }
 
     .hero-container {
-        margin-top: 0;
-        /* Removed negative margin */
+        gap: 15px;
     }
 
     .hero-logo-top img {
-        height: 90px;
-        margin-top: 0;
+        height: 85px; /* Shrunk */
+        width: 85px;
         margin-bottom: 5px;
+        transform: scale(1.2);
     }
 
     .hero-text h1 {
-        font-size: 1.6rem;
-        margin-bottom: 3px;
+        font-size: 1.5rem; /* More compact */
+        line-height: 1.2;
+        margin-bottom: 5px;
     }
 
     .hero-text p {
         font-size: 0.95rem;
-        margin-bottom: 8px;
+        line-height: 1.4;
     }
 
     .hero-form-wrapper {
-        padding: 12px 10px;
+        padding: 15px 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-form-wrapper select,
+    .inline-form select,
+    .glass-form-group select {
+        font-size: 0.78rem;
+        padding-right: 8px;
+        padding-left: 22px;
+    }
+
+    .strip-list {
+        padding-right: 10px; /* Small margin from the edge */
+        text-align: right;
+    }
+
+    .strip-list li {
+        justify-content: flex-start; /* Align to the right in RTL */
+        font-size: 1rem;
+        line-height: 1.4;
     }
 
     .inline-inputs {
-        flex-direction: column;
         gap: 8px;
-        /* Minimal gap between inputs */
     }
 
     .form-group {
         margin-top: 8px !important;
-        /* Force tight gap for select */
     }
 
     .btn-submit-gold {
+        padding: 12px;
+        font-size: 1.1rem;
         margin-top: 8px;
-        padding: 10px;
     }
 
-    .hero-image img {
-        max-height: 65px;
-        /* Shrunk to 3/4 of previous size (was 90px) */
-    }
-
-    .grid-3x2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .steps-section {
-        padding: 100px 0 60px;
-        /* Very high top padding for mobile to push clock down */
+    body {
+        padding-bottom: 0;
     }
 }
 

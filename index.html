@@ -31,32 +31,53 @@
             <!-- Content & Form -->
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>חיבור ישיר לעורך דין תעבורה מומחה</h1>
-                    <p>השאירו פרטים והמערכת שלנו תחבר אתכם באופן מיידי לייצוג אישי, מקצועי ודיסקרטי.</p>
-                </div>
-                
-                <div class="hero-form-wrapper">
-                    <form id="heroForm" action="https://formsubmit.co/ali.law.israel@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="ליד חדש מהאתר (טופס עליון)" />
-                        <input type="hidden" name="_captcha" value="false" />
-                        
-                        <div class="inline-inputs">
-                            <input type="text" name="שם" placeholder="שם מלא" required />
-                            <input type="tel" name="טלפון" placeholder="מספר טלפון" required />
-                        </div>
-                        <div class="form-group" style="margin-top: 15px;">
-                            <select name="נושא">
-                                <option value="" disabled selected>נושא הפנייה</option>
-                                <option value="שלילת רישיון">שלילת רישיון נהיגה</option>
-                                <option value="נהיגה בשכרות">נהיגה בשכרות / תחת השפעה</option>
-                                <option value="מהירות מופרזת">מהירות מופרזת</option>
-                                <option value="תאונת דרכים">תאונת דרכים</option>
-                                <option value="דוח תנועה">דוח תנועה / מחיקת נקודות</option>
-                                <option value="אחר">אחר</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-submit-gold">תיאום פגישת ייעוץ</button>
-                    </form>
+                    <h1>אל תתמודד לבד מול המערכת. <span style="color: var(--gold);">מחברים אותך לייצוג המקצועי ביותר.</span></h1>
+                    <p>מומחים לדיני תעבורה שיעזרו לך לשמור על הרישיון והזכויות שלך.<br>השאר פרטים וקבל הצעות מעורכי דין מובילים – ללא עלות וללא התחייבות.</p>
+                    <p class="quote-text">
+                        ברגע שקיבלתם דוח, זימון לדין, או במקרה של שלילה – השארת הפרטים כאן מבטיחה לכם שקט נפשי. פנייתכם תועבר לעורכי דין מומחים שיחזרו אליכם עם ההצעות המשתלמות ביותר ובתנאים הטובים ביותר בשוק. אנחנו כאן כדי לוודא שאתם בידיים בטוחות, עם ליווי מקצועי ללא פשרות ובמחיר הוגן ואטרקטיבי.
+                    </p>
+                    <div class="hero-form-wrapper">
+                        <form id="heroForm" action="https://formsubmit.co/ali.law.israel@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="ליד חדש מהאתר (טופס עליון)" />
+                            <input type="hidden" name="_captcha" value="false" />
+                            
+                            <div class="inline-inputs">
+                                <input type="text" name="שם" placeholder="שם מלא" required />
+                                <input type="tel" name="טלפון" placeholder="מספר טלפון" required />
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <select name="מועד בבית משפט או שימוע" required>
+                                    <option value="" disabled selected>האם נקבע מועד בבית משפט או שימוע?</option>
+                                    <option value="כן, נקבע מועד">כן, נקבע מועד</option>
+                                    <option value="לא, לא נקבע">לא, לא נקבע</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <select name="האם זהו הדוח היחיד" required>
+                                    <option value="" disabled selected>האם זהו הדוח עבירה היחיד בשנים האחרונות?</option>
+                                    <option value="כן, העבר שלי נקי לגמרי">כן, העבר שלי נקי לגמרי</option>
+                                    <option value="לא, יש לי כבר צבירת נקודות קודמת">לא, יש לי כבר צבירת נקודות קודמת</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <select name="נושא הפנייה" required>
+                                    <option value="" disabled selected>נושא הפנייה</option>
+                                    <option value="שלילת רישיון">שלילת רישיון נהיגה</option>
+                                    <option value="נהיגה בשכרות">נהיגה בשכרות / תחת השפעה</option>
+                                    <option value="מהירות מופרזת">מהירות מופרזת</option>
+                                    <option value="תאונת דרכים">תאונת דרכים</option>
+                                    <option value="דוח תנועה">דוח תנועה / מחיקת נקודות</option>
+                                </select>
+                            </div>
+                            <p class="quote-text" style="text-align: right;">
+                                זמן הוא פקטור קריטי בתיקי תעבורה. במקום להתחיל לחפש ולהשוות עורכי דין, המערכת שלנו חוסכת לכם את זמן החיפושים ומעבירה אתכם ישירות למומחה המדויק לסוג העבירה שלכם - הכל בצורה מהירה ואוטומטית.
+                            </p>
+                            <p class="quote-text" style="text-align: right;">
+                                אנו עובדים עם רשת של עורכי דין מנוסים מהשורה הראשונה בתחום התעבורה. כל פנייה שמגיעה אלינו מנותבת בדיסקרטיות מוחלטת ובמהירות ישר לשולחנו של עורך הדין שיטפל בתיק שלכם.
+                            </p>
+                            <button type="submit" class="btn-submit-gold" style="font-style: normal;">להשארת פרטים וקבלת הצעות עכשיו</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +88,7 @@
         <div class="container">
             <h2 class="strip-title">איך השירות פועל?</h2>
             <p class="strip-text">
-                המערכת שלנו נועדה לחבר בינך לבין עורך דין מומחה בתחום התעבורה בצורה המהירה והיעילה ביותר. ברגע שאתם משאירים פנייה, הטכנולוגיה שלנו מעבירה את פרטי המקרה ישירות לעורך דין מנוסה שמותאם בדיוק למהות הפנייה שלכם - בצורה מהירה וישירות לטיפול משפטי מקצועי ודיסקרטי.
+                אנחנו מחברים אותך לעורכי הדין המובילים בתעבורה תוך דקות. ללא בירוקרטיה, ללא המתנה. אצלנו תקבלו את המחיר הכי משתלם ומקצועי שיש.
             </p>
 
             <h2 class="strip-title mt-40">למי השירות מיועד?</h2>
@@ -76,7 +97,7 @@
                 <li><i class="fa-solid fa-chevron-left"></i> לנהגים שעומדים בפני שלילת רישיון</li>
                 <li><i class="fa-solid fa-chevron-left"></i> למי שהיה מעורב בתאונת דרכים</li>
                 <li><i class="fa-solid fa-chevron-left"></i> לכל אדם הזקוק לייצוג פלילי או תעבורתי מקצועי</li>
-                <li><i class="fa-solid fa-chevron-left"></i> למי שמחפש עורך דין אמין ומנוסה ללא פשרות</li>
+                <li><i class="fa-solid fa-chevron-left"></i> למי שמחפש עורכי דין אמינים ומנוסים ללא פשרות</li>
             </ul>
         </div>
     </section>
@@ -108,7 +129,7 @@
                     <i class="fa-solid fa-gavel"></i>
                 </div>
                 <p class="quote-text">
-                    "ברגע שקיבלתם דוח, זימון לדין, או במקרה של שלילה - השארת הפרטים כאן מבטיחה שעורך דין מיומן יקבל את הפנייה וייצור עמכם קשר בהקדם האפשרי להבנת המקרה ותחילת טיפול מהיר."
+                    "ברגע שקיבלתם דוח, זימון לדין, או במקרה של שלילה - השארת הפרטים כאן מבטיחה שעורכי דין מיומנים יקבלו את הפנייה וייצרו עמכם קשר בהקדם האפשרי להבנת המקרה ותחילת טיפול מהיר."
                 </p>
             </div>
         </div>
@@ -117,8 +138,8 @@
     <!-- ========== MID CTA FORM (Gray Section) ========== -->
     <section class="mid-cta-section">
         <div class="mid-cta-box">
-            <h2>ייעוץ ראשוני ללא התחייבות</h2>
-            <p>השאירו פרטים עכשיו ועורך דין מומחה בתחום התעבורה יחזור אליכם לשיחת אבחון ראשונית.</p>
+            <h2>עורכי דין יחזרו אליכם עם הצעות</h2>
+            <p>השאירו פרטים עכשיו ועורכי דין מומחים בתחום התעבורה יחזרו אליכם לשיחת אבחון ראשונית.</p>
             <form class="inline-form" id="midForm" action="https://formsubmit.co/ali.law.israel@gmail.com"
                 method="POST">
                 <input type="hidden" name="_subject" value="ליד חדש מהאתר (טופס אמצע)" />
@@ -127,6 +148,20 @@
                 <div class="inline-inputs">
                     <input type="text" name="שם" placeholder="שם מלא" required />
                     <input type="tel" name="טלפון" placeholder="מספר טלפון" required />
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <select name="מועד בבית משפט או שימוע" required>
+                        <option value="" disabled selected>האם נקבע מועד בבית משפט או שימוע?</option>
+                        <option value="כן, נקבע מועד">כן, נקבע מועד</option>
+                        <option value="לא, לא נקבע">לא, לא נקבע</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <select name="האם זהו הדוח היחיד" required>
+                        <option value="" disabled selected>האם זהו הדוח עבירה היחיד בשנים האחרונות?</option>
+                        <option value="כן, העבר שלי נקי לגמרי">כן, העבר שלי נקי לגמרי</option>
+                        <option value="לא, יש לי כבר צבירת נקודות קודמת">לא, יש לי כבר צבירת נקודות קודמת</option>
+                    </select>
                 </div>
                 <div class="form-group" style="margin-top: 15px;">
                     <select name="נושא">
@@ -171,7 +206,7 @@
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
                     <h3>3. התאמה למומחה</h3>
-                    <p>הפנייה מועברת באופן מאובטח ישירות לעורך דין מנוסה בתחום התעבורה הספציפי שלכם.</p>
+                    <p>הפנייה מועברת באופן מאובטח ישירות לעורכי דין מנוסים בתחום התעבורה הספציפי שלכם.</p>
                 </div>
 
                 <div class="step-card">
@@ -179,22 +214,14 @@
                         <i class="fa-solid fa-phone-volume"></i>
                     </div>
                     <h3>4. יצירת קשר</h3>
-                    <p>עורך הדין יקבל את פרטיכם וייצור עמכם קשר ישיר ומהיר מטעמו.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
-                    <h3>5. ייעוץ משפטי</h3>
-                    <p>שיחה מקצועית מול עורך הדין שנועדה לנתח את פרטי המקרה ולהתחיל בטיפול מהיר.</p>
+                    <p>עורך הדין יקבל את הפרטים שלכם וייצור עמכם קשר ישיר ומהיר מטעמו.</p>
                 </div>
 
                 <div class="step-card">
                     <div class="step-icon">
                         <i class="fa-solid fa-handshake"></i>
                     </div>
-                    <h3>6. המשך טיפול</h3>
+                    <h3>5. המשך טיפול</h3>
                     <p>גיבוש אסטרטגיה וקבלת ייצוג משפטי מלא מול הרשויות ובתי המשפט במידת הצורך.</p>
                 </div>
             </div>
@@ -211,6 +238,7 @@
                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
             <p>A.L.I Legal Lead Management</p>
+            <p><a href="mailto:ali.law.israel@gmail.com" style="color: var(--gold);">ali.law.israel@gmail.com</a></p>
             <p>© 2026 כל הזכויות שמורות</p>
         </div>
     </footer>
