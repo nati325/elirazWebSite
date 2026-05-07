@@ -51,11 +51,11 @@
 :root {
     --primary: #141414;
     /* Deep Charcoal from reference */
-    --gold: #d4af37;
-    --gold-light: #eadd96;
-    --text-dark: #1f1f1f;
-    --text-muted: #555555;
-    --bg-light: #f3f4f6;
+    --gold: #ebd57a;
+    --gold-light: #f3e5a6;
+    --text-dark: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --bg-light: #1a1a1a;
     /* Soft gray from reference */
     --white: #ffffff;
     --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,8 +70,8 @@ html {
 
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: var(--white);
-    color: var(--text-dark);
+    background-color: var(--primary);
+    color: var(--white);
     direction: rtl;
     line-height: 1.7; /* Improved line height */
     overflow-x: hidden;
@@ -116,7 +116,7 @@ ul {
     font-weight: 700;
     cursor: pointer;
     transition: var(--t);
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Assistant', sans-serif;
     margin-top: 10px;
 }
 
@@ -233,7 +233,7 @@ ul {
 }
 
 .hero-text h1 {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Assistant', sans-serif;
     color: var(--white);
     font-size: 2.8rem;
     font-weight: 900;
@@ -269,6 +269,7 @@ ul {
     padding: 25px;
     border-radius: var(--radius);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    margin-top: 40px;
 }
 
 .hero-form-wrapper input,
@@ -435,7 +436,7 @@ ul {
 }
 
 .strip-title {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 1.8rem;
     color: var(--white);
     margin-bottom: 20px;
@@ -475,7 +476,7 @@ ul {
    ============================================= */
 .steps-section {
     padding: 50px 0; /* Reduced from 100px */
-    background-color: var(--white);
+    background-color: var(--primary);
 }
 
 .steps-grid {
@@ -486,11 +487,11 @@ ul {
 
 .quote-item {
     text-align: center;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: var(--radius);
     transition: var(--t);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .quote-item:hover {
@@ -501,7 +502,7 @@ ul {
 .quote-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0;
     font-style: normal; /* Removed italic */
     font-weight: 400;
@@ -558,7 +559,7 @@ ul {
 }
 
 .mid-cta-box h2 {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Assistant', sans-serif;
     color: var(--white);
     font-size: 1.8rem;
     margin-bottom: 10px;
@@ -639,7 +640,7 @@ ul {
    ============================================= */
 .how-it-works {
     padding: 50px 0; /* Reduced from 80px */
-    background-color: var(--white);
+    background-color: var(--primary);
 }
 
 .section-header {
@@ -655,13 +656,15 @@ ul {
 }
 
 .grid-3x2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
 }
 
 .step-card {
     text-align: center;
+    width: calc(33.333% - 28px);
 }
 
 .step-icon {
@@ -679,8 +682,8 @@ ul {
 }
 
 .step-card h3 {
-    font-family: 'Heebo', sans-serif;
-    color: var(--primary);
+    font-family: 'Assistant', sans-serif;
+    color: var(--white);
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: 700;
@@ -996,7 +999,10 @@ ul {
 
 @media (max-width: 600px) {
     .grid-3x2 {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .step-card {
+        width: 100%;
     }
 
     .strip-title {
